@@ -1,20 +1,24 @@
-from src.power import power_function
-from src.constants import SAMPLE_CONSTANT
-
+from src.calculate import calculate
+from src.calc_exceptions import CalcError
+from src.calc_exceptions import ExpressionError
 
 def main() -> None:
     """
-    Обязательнная составляющая программ, которые сдаются. Является точкой входа в приложение
-    :return: Данная функция ничего не возвращает
+    Точка входа программы
     """
+    while expr := input("Введите выражение: "):
+        if expr == "exit":
+            exit()
 
-    target, degree = map(int, input("Введите два числа разделенные пробелом: ").split(" "))
+        try:
+            result = calculate(expr)
+            print(result)
 
-    result = power_function(target=target, power=degree)
+        except ExpressionError:
+            print("Ошибка ввода")
+        except CalcError:
+            print("Ошибка выполнения")
 
-    print(result)
-
-    print(SAMPLE_CONSTANT)
 
 if __name__ == "__main__":
     main()
