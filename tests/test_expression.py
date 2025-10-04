@@ -18,6 +18,7 @@ class TestExpressions:
         Тестирование возведения в степень
         """
         assert calculate("2 ** 3") == 8
+        assert calculate("0 ** 0") == 1
         assert calculate("4 ** 0.5") == 2
         assert calculate("3 ** 2 ** 2") == 81  # правоассоциативность проверяем
 

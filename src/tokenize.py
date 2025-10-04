@@ -28,7 +28,6 @@ def tokenize(expr: str) -> list[Token]:
         #Сдвигаемся в конец токена
         pos = matches.end()
 
-        #
         if tok[0].isdigit():
             tokenized.append(('NUM', float(tok)))
         elif len(tok)>1 and tok[1].isdigit():

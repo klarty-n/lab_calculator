@@ -14,10 +14,10 @@ def main() -> None:
             result = calculate(expr)
             print(result)
 
-        except ExpressionError:
-            print("Ошибка ввода")
-        except CalcError:
-            print("Ошибка выполнения")
+        except ExpressionError as err:
+            print("Ошибка при ввода выражения:", str(err))
+        except CalcError as err:
+            print("Ошибка вычисления:", str(err))
 
 
 if __name__ == "__main__":
