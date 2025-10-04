@@ -7,7 +7,7 @@ def main() -> None:
     Точка входа программы
     """
     while expr := input("Введите выражение: "):
-        if expr == "exit":
+        if expr == "exit_calc":
             exit()
 
         try:
